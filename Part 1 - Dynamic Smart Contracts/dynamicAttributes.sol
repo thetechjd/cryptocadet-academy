@@ -1720,7 +1720,7 @@ pragma solidity ^0.8.9;
 
 
 
-contract DynamicSVG is ERC721, ERC721Enumerable, Ownable, ReentrancyGuard {
+contract DynamicAttributes is ERC721, ERC721Enumerable, Ownable, ReentrancyGuard {
     mapping(uint256 => Attr) public attributes;
 
     uint256 public totalMinted;
