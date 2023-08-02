@@ -1,3 +1,9 @@
 [submodule "Miscellaneous"]
 	path = Miscellaneous
 	url = https://github.com/thetechjd/angrysquirrels.git
+[submodule "Extras"]
+	path = Extras
+	url = https://github.com/thetechjd/angrysquirrels.git
+[submodule "Resources/MerkleTreeMint"]
+	path = Resources/MerkleTreeMint
+	url = https://github.com/thetechjd/angrysquirrels.git
