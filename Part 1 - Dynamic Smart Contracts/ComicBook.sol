@@ -1609,7 +1609,7 @@ contract ComicBook is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
 
 
     uint256 public MAX_SUPPLY = 1000;
-    uint256 public walletLimit = 10;
+   
 
     
     
@@ -1675,8 +1675,8 @@ contract ComicBook is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
 
     function mint(uint256 amount) public payable {
         
-        require(totalSupply(issue) + amount <= MAX_SUPPLY * issue, "Sold out!");
-        //require(balanceOf(msg.sender, issue) + amount <= walletLimit, "Requested amount exceeds wallet limit");
+        require(totalSupply(issue) + amount <= MAX_SUPPLY, "Sold out!");
+       
         require(msg.value >= price , "Insufficient value sent");
            
         _mint(msg.sender, issue, amount, "");
@@ -1690,9 +1690,7 @@ contract ComicBook is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
          price = _newPrice;
      }
 
-     function setWalletLimit(uint256 _newLimit) external onlyOwner{
-         walletLimit = _newLimit;
-     }
+     
      
 
 
