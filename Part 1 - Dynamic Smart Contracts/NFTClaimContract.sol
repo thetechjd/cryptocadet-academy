@@ -18,11 +18,11 @@ interface IERC721A is IERC721 {
 
 
 
-contract SlimysClaim {
+contract NFTClaim {
 
     
     mapping(address => uint256[]) public holders;
-    bool public invalidIdClaimed = false;
+    
     address public owner; 
     address public deadWallet = 0x000000000000000000000000000000000000dEaD;
     IERC721A public v1;
@@ -57,22 +57,7 @@ contract SlimysClaim {
         return v1.walletOfOwner(_addr);
     } 
 
-    function invalidIdClaim() external {
-        if(!invalidIdClaimed){
-            if(v1.ownerOf(0) == msg.sender){
-           v1.transferFrom(msg.sender, deadWallet, 0);
-           v2.transferFrom(address(this), msg.sender, 44);
-
-           invalidIdClaimed = true;
-           } else {
-               revert("Id lookup failed.");
-           }
-        } else {
-            revert("Invalid Id already claimed.");
-        }
-        
-        
-    }
+    
 
     function claim() external {
 
