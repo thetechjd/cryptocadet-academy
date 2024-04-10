@@ -11,7 +11,7 @@ const etherscan = await axios.get(`https://api.etherscan.io/api
 &endblock=99999999
 &page=1
 &offset=10
-&sort=asc&apikey=8XX3TRP1WSAQDAJD24KCGE56NJJADYD2P3`) 
+&sort=asc&apikey=${process.env.ETHERSCAN_API_KEY}`) 
 
    let { result } = etherscan.data;
 
